@@ -4,7 +4,7 @@ namespace BusinessEntities
 	using System;
 	using System.Collections.Generic;
 
-	public class UserActivity
+	public class UserActivityEntity
 	{
 		public int Id { get; set; }
 		public int UserId { get; set; }

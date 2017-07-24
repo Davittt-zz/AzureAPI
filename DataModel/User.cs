@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessEntities
+namespace DataModel
 {
 	public enum UserType { User = 0, Admin = 1, SuperUser = 2 }
 
