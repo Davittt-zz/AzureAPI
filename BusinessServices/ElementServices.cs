@@ -58,10 +58,10 @@ namespace BusinessServices
 			{
 				var config = new MapperConfiguration(cfg =>
 				{
-					cfg.CreateMap<List<Element>, List<ElementEntity>>();
+					cfg.CreateMap<Element, ElementEntity>();
 				});
-
 				IMapper mapper = config.CreateMapper();
+				
 				var elementsModel = mapper.Map<List<Element>, List<ElementEntity>>(elements);
 				return elementsModel;
 			}

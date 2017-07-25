@@ -35,6 +35,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Base\ICrudClass.cs" />
     <Compile Include="Base\IElementServices.cs" />
+    <Compile Include="DependencyResolver.cs" />
     <Compile Include="ElementServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +60,10 @@
     <ProjectReference Include="..\DataModel\DataModel.csproj">
       <Project>{A8ACB2EF-21C1-4330-99EB-599A60B5662F}</Project>
       <Name>DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resolver\Resolver.csproj">
+      <Project>{641f25fa-2763-4f2c-a77f-63d3dfd46827}</Project>
+      <Name>Resolver</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
