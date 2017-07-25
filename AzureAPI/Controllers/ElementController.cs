@@ -17,11 +17,12 @@ namespace AzureAPI.Controllers
 		#region Public Constructor
 
 		/// <summary>
-		/// Public constructor to initialize element service instance
+		/// Public constructor to initialize element service instance with DI
+		/// 
 		/// </summary>
-		public ElementController()
+		public ElementController(IElementServices elementServices)
 		{
-			_elementServices = new ElementServices();
+			_elementServices = elementServices;
 		}
 
 		#endregion

@@ -16,13 +16,12 @@ namespace BusinessServices
 	{
 		private readonly UnitOfWork _unitOfWork;
 
-
 		/// <summary>
-		/// Public constructor.
+		/// Public constructor with DI Unity
 		/// </summary>
-		public ElementServices()
+		public ElementServices(UnitOfWork unitOfWork)
 		{
-			_unitOfWork = new UnitOfWork();
+			_unitOfWork = unitOfWork;
 		}
 
 
