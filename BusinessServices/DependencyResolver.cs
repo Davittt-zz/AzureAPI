@@ -16,6 +16,7 @@ namespace BusinessServices
 		{
 			registerComponent.RegisterType<IElementServices, ElementServices>();
 			registerComponent.RegisterType<IUserServices, UserServices>();
+			registerComponent.RegisterType<ITokenServices, TokenServices>();
 		}
 	}
 }

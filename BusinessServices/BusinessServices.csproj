@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -48,10 +49,12 @@
   <ItemGroup>
     <Compile Include="Base\ICrudClass.cs" />
     <Compile Include="Base\IElementServices.cs" />
+    <Compile Include="Base\ITokenServices.cs" />
     <Compile Include="Base\IUserServices.cs" />
     <Compile Include="DependencyResolver.cs" />
     <Compile Include="ElementServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TokenServices.cs" />
     <Compile Include="UserServices.cs" />
   </ItemGroup>
   <ItemGroup>

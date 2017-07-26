@@ -6,10 +6,10 @@ namespace BusinessEntities
 
     public partial class TokenEntity
 	{
-        public int ID { get; set; }
-        public int UserID { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
         public string AuthToken { get; set; }
-        public Nullable<System.DateTime> Created { get; set; }
-        public Nullable<System.DateTime> LastUpdate { get; set; }
+        public DateTime IssuedOn { get; set; }
+        public DateTime ExpiresOn { get; set; }
     }
 }

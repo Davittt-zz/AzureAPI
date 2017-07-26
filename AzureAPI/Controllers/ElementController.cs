@@ -1,4 +1,5 @@
-﻿using AzureAPI.Filters;
+﻿using AzureAPI.ActionFilters;
+using AzureAPI.Filters;
 using BusinessEntities;
 using BusinessServices;
 using BusinessServices.Base;
@@ -11,7 +12,8 @@ using System.Web.Http;
 
 namespace AzureAPI.Controllers
 {
-	[ApiAuthenticationFilter]
+	//[ApiAuthenticationFilter]
+	[AuthorizationRequired]
 	public class ElementController : ApiController
 	{
 		private readonly IElementServices _elementServices;
