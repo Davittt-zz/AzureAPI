@@ -34,6 +34,8 @@ namespace AzureAPI.Controllers
 		/// <returns></returns>
 		public HttpResponseMessage Get()
 		{
+			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "David Donari");
+
 			var elements = _elementServices.GetAllElements();
 			if (elements != null)
 			{
