@@ -12,7 +12,7 @@
 			 
 		}
 
-		//	public virtual DbSet<User> Users { get; set; }
+		public virtual DbSet<User> Users { get; set; }
 		//	public virtual DbSet<UserActivity> UserActivities { get; set; }
 		public virtual DbSet<Element> Elements { get; set; }
 	}

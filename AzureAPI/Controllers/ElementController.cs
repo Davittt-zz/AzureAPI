@@ -1,4 +1,5 @@
-﻿using BusinessEntities;
+﻿using AzureAPI.Filters;
+using BusinessEntities;
 using BusinessServices;
 using BusinessServices.Base;
 using System;
@@ -10,6 +11,7 @@ using System.Web.Http;
 
 namespace AzureAPI.Controllers
 {
+	[ApiAuthenticationFilter]
 	public class ElementController : ApiController
 	{
 		private readonly IElementServices _elementServices;
@@ -34,8 +36,6 @@ namespace AzureAPI.Controllers
 		/// <returns></returns>
 		public HttpResponseMessage Get()
 		{
-			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "David Donari");
-
 			var elements = _elementServices.GetAllElements();
 			if (elements != null)
 			{
