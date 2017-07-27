@@ -1,4 +1,5 @@
 ﻿using AzureAPI.ActionFilters;
+using AzureAPI.ErrorHelper;
 using AzureAPI.Filters;
 using BusinessEntities;
 using BusinessServices;
@@ -51,10 +52,16 @@ namespace AzureAPI.Controllers
 		// GET api/element/5
 		public HttpResponseMessage Get(int id)
 		{
-			var element = _elementServices.GetElementById(id);
-			if (element != null)
-				return Request.CreateResponse(HttpStatusCode.OK, element);
-			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No element found for this id");
+			if (id > 0)
+			{
+				var element = _elementServices.GetElementById(id);
+				if (element != null)
+				{
+					return Request.CreateResponse(HttpStatusCode.OK, element);
+				}
+				throw new ApiDataException(1001, "No product found for this id.", HttpStatusCode.NotFound);
+			}
+			throw new ApiException() { ErrorCode = (int)HttpStatusCode.BadRequest, ErrorDescription = "Bad Request..." };
 		}
 
 		// POST api/element

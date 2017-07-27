@@ -1,4 +1,4 @@
-﻿using AzureAPI.Filters.WebApi.Filters;
+﻿using AzureAPI.Filters;
 using BusinessServices.Base;
 using System;
 using System.Collections.Generic;
