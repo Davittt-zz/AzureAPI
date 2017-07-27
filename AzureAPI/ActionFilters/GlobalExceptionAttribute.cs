@@ -10,7 +10,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Net.Http;
 using System.Net;
 using AzureAPI.ErrorHelper;
-using AzureAPI.Helpers;
 
 namespace AzureAPI.ActionFilters
 {
