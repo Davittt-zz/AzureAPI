@@ -250,7 +250,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\JSONHelper.cs" />
-    <Compile Include="Helpers\NLoger.cs" />
+    <Compile Include="Helpers\NLogger.cs" />
     <Compile Include="Helpers\ServiceStatus.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />

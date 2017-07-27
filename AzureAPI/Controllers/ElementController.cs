@@ -1,6 +1,5 @@
-﻿using AzureAPI.ActionFilters;
+﻿
 using AzureAPI.ErrorHelper;
-using AzureAPI.Filters;
 using BusinessEntities;
 using BusinessServices;
 using BusinessServices.Base;
@@ -13,8 +12,11 @@ using System.Web.Http;
 
 namespace AzureAPI.Controllers
 {
+
+	//token
+	//[AuthorizationRequired]
+	//basic
 	//[ApiAuthenticationFilter]
-	[AuthorizationRequired]
 	public class ElementController : ApiController
 	{
 		private readonly IElementServices _elementServices;
@@ -52,6 +54,7 @@ namespace AzureAPI.Controllers
 		// GET api/element/5
 		public HttpResponseMessage Get(int id)
 		{
+			throw new Exception("No product found for this id");
 			if (id > 0)
 			{
 				var element = _elementServices.GetElementById(id);

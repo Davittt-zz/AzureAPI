@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces.
+using System;
 using System.Net;
 using System.Runtime.Serialization;
-using System.Web;
+#endregion
+
 
 namespace AzureAPI.ErrorHelper
 {
@@ -21,7 +21,6 @@ namespace AzureAPI.ErrorHelper
 		public string ErrorDescription { get; set; }
 		[DataMember]
 		public HttpStatusCode HttpStatus { get; set; }
-
 
 		string reasonPhrase = "ApiException";
 

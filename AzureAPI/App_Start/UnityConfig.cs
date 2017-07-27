@@ -39,7 +39,7 @@ namespace AzureAPI
 		public static void RegisterTypes(IUnityContainer container)
 		{
 			//Component initialization via MEF
-			ComponentLoader.LoadContainer(container, ".\\bin", "AzureApi.dll");
+			ComponentLoader.LoadContainer(container, ".\\bin", "AzureAPI.dll");
 			ComponentLoader.LoadContainer(container, ".\\bin", "BusinessServices.dll");
 		}
 	}

@@ -6,7 +6,7 @@ using System.Web.Http.Filters;
 using System.Web.Http.Controllers;
 using System.Web.Http.Tracing;
 using System.Web.Http;
-using AzureApi.Helpers;
+using AzureAPI.Helpers;
 
 
 namespace AzureAPI.ActionFilters

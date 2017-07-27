@@ -7,11 +7,10 @@ using System.Web.Http.Tracing;
 using NLog;
 using System.Net.Http;
 using System.Text;
-using AzureAPI.Helpers;
 using AzureAPI.ErrorHelper;
 #endregion
 
-namespace AzureApi.Helpers
+namespace AzureAPI.Helpers
 {
 	/// <summary>
 	/// Public class to log Error/info messages to the access log file

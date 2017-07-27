@@ -10,7 +10,8 @@ namespace AzureAPI.Helpers
 	{
 		#region Public extension methods.
 		/// <summary>
-		/// Extened method of object class, Converts an object to a json string.
+		/// Extened method of object class
+		/// Converts an object to a json string.
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
@@ -23,7 +24,7 @@ namespace AzureAPI.Helpers
 			}
 			catch (Exception ex)
 			{
-				return ex.Message + "";
+				return "";
 			}
 		}
 		#endregion
