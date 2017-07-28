@@ -24,7 +24,6 @@ namespace BusinessServices
 			_unitOfWork = unitOfWork;
 		}
 
-
 		/// <summary>
 		/// Fetches element details by id
 		/// </summary>

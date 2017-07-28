@@ -1,4 +1,7 @@
-﻿using BusinessServices.Base;
+﻿using AutoMapper;
+using BusinessEntities;
+using BusinessServices.Base;
+using DataModel;
 using DataModel.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -38,5 +41,28 @@ namespace BusinessServices
 			}
 			return 0;
 		}
+
+		/// <summary>
+		/// Fetches element details by id
+		/// </summary>
+		/// <param name="elementId"></param>
+		/// <returns></returns>
+		public BusinessEntities.UserEntity GetUserById(int userId)
+		{
+			var user = _unitOfWork.UserRepository.GetByID(userId);
+			if (user != null)
+			{
+				var config = new MapperConfiguration(cfg =>
+				{
+					cfg.CreateMap<User, UserEntity>().ForMember(x => x.Password, opt => opt.Ignore());
+				});
+
+				IMapper mapper = config.CreateMapper();
+				var usersModel = mapper.Map<User, UserEntity>(user);
+				return usersModel;
+			}
+			return null;
+		}
+
 	}
 }
