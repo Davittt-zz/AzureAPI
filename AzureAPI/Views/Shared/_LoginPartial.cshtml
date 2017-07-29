@@ -16,7 +16,15 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>
+             <input id="btnLogoff" class="btn btn-success btn-md pull-right" type="button" value="Log Off" onclick="Logoff()" style="padding-top: 6px;   border-top-width: 1px; margin-top: 8px;" />
+        </li>
     </ul>
 }
+
+<script>
+    function Logoff() {
+        sessionStorage.removeItem('accessToken');
+        window.location.href = 'Login.html';
+    }
+</script>
