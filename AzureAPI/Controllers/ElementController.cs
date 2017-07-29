@@ -1,4 +1,5 @@
 ﻿
+using AzureAPI.ActionFilters;
 using AzureAPI.ErrorHelper;
 using BusinessEntities;
 using BusinessServices;
@@ -12,11 +13,10 @@ using System.Web.Http;
 
 namespace AzureAPI.Controllers
 {
-
-	//token
-	//[AuthorizationRequired]
-	//basic
-	//[ApiAuthenticationFilter]
+	/// <summary>
+	/// Element controller class. you can add different classes like this. Token based security.
+	/// </summary>
+	[AuthorizationRequired]
 	public class ElementController : ApiController
 	{
 		private readonly IElementServices _elementServices;
@@ -38,23 +38,35 @@ namespace AzureAPI.Controllers
 		/// <summary>
 		/// Get the fullList of elements
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>List of Elements</returns>
 		public HttpResponseMessage Get()
 		{
-			var elements = _elementServices.GetAllElements();
-			if (elements != null)
+			try
 			{
-				var elementEntities = elements as List<ElementEntity> ?? elements.ToList();
-				if (elementEntities.Any())
-					return Request.CreateResponse(HttpStatusCode.OK, elementEntities);
+				var elements = _elementServices.GetAllElements();
+				if (elements != null)
+				{
+					var elementEntities = elements as List<ElementEntity> ?? elements.ToList();
+					if (elementEntities.Any())
+						return Request.CreateResponse(HttpStatusCode.OK, elementEntities);
+
+				}
+				throw new ApiDataException(1001, "No product found", HttpStatusCode.NotFound);
 			}
-			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Elements not found");
+			catch
+			{
+				throw new ApiException() { ErrorCode = (int)HttpStatusCode.BadRequest, ErrorDescription = "Bad Request..." };
+			}
 		}
 
 		// GET api/element/5
+		/// <summary>
+		/// Get a Prticular element
+		/// </summary>
+		/// <param name="id">Element Id</param>
+		/// <returns>Element</returns>
 		public HttpResponseMessage Get(int id)
 		{
-			throw new Exception("No product found for this id");
 			if (id > 0)
 			{
 				var element = _elementServices.GetElementById(id);
@@ -68,12 +80,27 @@ namespace AzureAPI.Controllers
 		}
 
 		// POST api/element
+		/// <summary>
+		/// Creates a new element
+		/// </summary>
+		/// <param name="elementEntity">Parameters set</param>
+		/// <returns>Id of the element</returns>
 		public int Post([FromBody] ElementEntity elementEntity)
 		{
-			return _elementServices.CreateElement(elementEntity);
+			if (elementEntity != null)
+			{
+				return _elementServices.CreateElement(elementEntity);
+			}
+			throw new ApiBusinessException(2002, "Bad input.", HttpStatusCode.BadRequest);
 		}
 
 		// PUT api/element/5
+		/// <summary>
+		/// Update an element
+		/// </summary>
+		/// <param name="id">Element Id</param>
+		/// <param name="elementEntity">SParameters set</param>
+		/// <returns></returns>
 		public bool Put(int id, [FromBody]ElementEntity elementEntity)
 		{
 			if (id > 0)
@@ -84,6 +111,11 @@ namespace AzureAPI.Controllers
 		}
 
 		// DELETE api/element/5
+		/// <summary>
+		/// Deletes and element
+		/// </summary>
+		/// <param name="id">Element Id</param>
+		/// <returns></returns>
 		public bool Delete(int id)
 		{
 			if (id > 0)
