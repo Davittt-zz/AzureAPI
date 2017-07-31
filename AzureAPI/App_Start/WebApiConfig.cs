@@ -6,6 +6,8 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using AzureAPI.ActionFilters;
+using AzureAPI.Areas.HelpPage;
+using System.Web;
 
 namespace AzureAPI
 {
@@ -16,18 +18,16 @@ namespace AzureAPI
 
 			// Configuración y servicios de Web API
 			// Configure Web API para usar solo la autenticación de token de portador.
-		//	config.SuppressDefaultHostAuthentication();
-		//	config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-					
+			//config.SuppressDefaultHostAuthentication();
+			//config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+
 			//Config Logging filter
 			config.Filters.Add(new LoggingFilterAttribute());
 
+			//Config GlobalException filter
 			config.Filters.Add(new GlobalExceptionAttribute());
 
-			//Config GlobalException filter
-			//config.Filters.Add(new GlobalExceptionAttribute());
-
-			// Rutas de Web API
+			// Web API Routes
 			config.MapHttpAttributeRoutes();
 
 			config.Routes.MapHttpRoute(
