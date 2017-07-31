@@ -239,6 +239,7 @@
     <Compile Include="Controllers\AuthenticateController.cs" />
     <Compile Include="Controllers\ElementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserEntitiesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="ErrorHelper\ApiDataException.cs" />
     <Compile Include="ErrorHelper\ApiException.cs" />
@@ -326,6 +327,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Elements.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -391,7 +393,6 @@
   <ItemGroup>
     <Folder Include="APILog\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Views\UserAccount\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
