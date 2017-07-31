@@ -588,12 +588,6 @@
             Init View
             </summary>
         </member>
-        <member name="M:AzureAPI.Controllers.UserEntitiesController.#ctor(BusinessServices.Base.IUserServices)">
-            <summary>
-            Public constructor to initialize element service instance with DI
-            
-            </summary>
-        </member>
         <member name="T:AzureAPI.Controllers.ValuesController">
             <summary>
             Value class is a set of metods which are generated automatically. The class has no security mechanisms
@@ -830,9 +824,6 @@
             <summary>
             Get/Set property for accessing Status Message
             </summary>
-        </member>
-        <member name="T:AzureAPI.Models.ExternalLoginConfirmationViewModel">
-            
         </member>
     </members>
 </doc>
