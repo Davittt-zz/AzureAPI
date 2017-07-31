@@ -492,9 +492,9 @@
             
             </summary>
         </member>
-        <member name="M:AzureAPI.Controllers.UserController.GetUserInfo(System.Int32)">
+        <member name="M:AzureAPI.Controllers.UserController.GetUserInfo">
             <summary>
-            Get User information
+            Get User information. Add Header with Token "authToken"
             </summary>
             <param name="id"></param>
             <returns></returns>
@@ -504,9 +504,16 @@
             Public constructor to initialize product service instance
             </summary>
         </member>
+        <member name="M:AzureAPI.Controllers.AuthenticateController.TestToken">
+            <summary>
+            Test function will be a simple function with few variable and will return "Ok" output with the access token is valid. A test function will be developed to accept the access token and input and return valid output. Test function will be a simple function with few variable and will return "Ok" output with the access token is valid. There will not be any calculation inside the function.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:AzureAPI.Controllers.AuthenticateController.Login">
             <summary>
-            Authenticates user and returns token with expiry.
+            Authenticates user and returns token with expiry. Set authenticatoin header ( Basic  encode64(user:password)). 
+            You can convert your user:password to base64 at https://www.base64encode.org/
             </summary>
             <returns></returns>
         </member>
@@ -530,6 +537,11 @@
             <param name="Token"></param>
             <returns></returns>
         </member>
+        <member name="T:AzureAPI.Controllers.ElementController">
+            <summary>
+            Element controller class. you can add different classes like this. Token based security.
+            </summary>
+        </member>
         <member name="M:AzureAPI.Controllers.ElementController.#ctor(BusinessServices.Base.IElementServices)">
             <summary>
             Public constructor to initialize element service instance with DI
@@ -538,27 +550,27 @@
         </member>
         <member name="M:AzureAPI.Controllers.ElementController.Get">
             <summary>
-            Get the fullList of elements
+            Get the fullList of elements. Add Header with Token "authToken". you can find it in your browser (Chrome->PressF12->Application Tab->)
             </summary>
             <returns>List of Elements</returns>
         </member>
         <member name="M:AzureAPI.Controllers.ElementController.Get(System.Int32)">
             <summary>
-            Get a Prticular element
+            Get a Particular element. Add Header with Token "authToken"
             </summary>
             <param name="id">Element Id</param>
-            <returns></returns>
+            <returns>Element</returns>
         </member>
         <member name="M:AzureAPI.Controllers.ElementController.Post(BusinessEntities.ElementEntity)">
             <summary>
-            Creates a new element
+            Creates a new element. Add Header with Token "authToken"
             </summary>
             <param name="elementEntity">Parameters set</param>
             <returns>Id of the element</returns>
         </member>
         <member name="M:AzureAPI.Controllers.ElementController.Put(System.Int32,BusinessEntities.ElementEntity)">
             <summary>
-            Update an element
+            Update an element. Add Header with Token "authToken"
             </summary>
             <param name="id">Element Id</param>
             <param name="elementEntity">SParameters set</param>
@@ -566,7 +578,7 @@
         </member>
         <member name="M:AzureAPI.Controllers.ElementController.Delete(System.Int32)">
             <summary>
-            Deletes and element
+            Deletes and element. Add Header with Token "authToken"
             </summary>
             <param name="id">Element Id</param>
             <returns></returns>
@@ -574,6 +586,12 @@
         <member name="T:AzureAPI.Controllers.HomeController">
             <summary>
             Init View
+            </summary>
+        </member>
+        <member name="M:AzureAPI.Controllers.UserEntitiesController.#ctor(BusinessServices.Base.IUserServices)">
+            <summary>
+            Public constructor to initialize element service instance with DI
+            
             </summary>
         </member>
         <member name="T:AzureAPI.Controllers.ValuesController">
@@ -603,14 +621,14 @@
         </member>
         <member name="M:AzureAPI.Controllers.ValuesController.Put(System.Int32,System.String)">
             <summary>
-            
+            Edit Value
             </summary>
             <param name="id">Value Id</param>
             <param name="value">Parameters Set</param>
         </member>
         <member name="M:AzureAPI.Controllers.ValuesController.Delete(System.Int32)">
             <summary>
-            Deletes and element
+            Deletes Value
             </summary>
             <param name="id">Value Id</param>
         </member>
