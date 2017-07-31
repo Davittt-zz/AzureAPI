@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,7 @@ namespace BusinessServices.Base
 	public interface IUserServices
 	{
 		int Authenticate(string userName, string password);
+
+		UserEntity GetUserById(int elementId);
 	}
 }

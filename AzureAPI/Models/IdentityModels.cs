@@ -21,7 +21,7 @@ namespace AzureAPI.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("WebApiDbEntities", throwIfV1Schema: false)
         {
         }
         

@@ -98,7 +98,7 @@ namespace AzureAPI.Filters
 		{
 			var dnsHost = filterContext.Request.RequestUri.DnsSafeHost;
 			filterContext.Response = filterContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
-			filterContext.Response.Headers.Add("WWW-Authenticate", string.Format("Basic realm=\"{0}\"", dnsHost));
+	//		filterContext.Response.Headers.Add("WWW-Authenticate", string.Format("Basic realm=\"{0}\"", dnsHost));
 		}
 	}
 }

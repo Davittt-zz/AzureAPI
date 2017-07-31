@@ -25,7 +25,6 @@ namespace AzureAPI
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			
-
 			//Define Formatters
 			var formatters = GlobalConfiguration.Configuration.Formatters;
 			var jsonFormatter = formatters.JsonFormatter;
@@ -34,8 +33,8 @@ namespace AzureAPI
 			// settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 			var appXmlType = formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
 			formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
-			//
-			//	//Add CORS Handler
+			
+			//Add CORS Handler
 			//	GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler());
 		}
 	}
