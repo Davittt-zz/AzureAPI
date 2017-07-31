@@ -12,9 +12,9 @@
             <input id="btnTestApi" class="btn btn-success btn-md " type="button" value="Test API" style="padding-left: 10px;" />
             <input id="btnApi" class="btn btn-success btn-md " type="button" value="Go to API" style="padding-left: 10px;" />
             <input id="btnLogoff" class="btn btn-success btn-md pull-right" type="button" value="Log Off" />
-            <input id="btnUserInfo" class="btn btn-success btn-md btn-md pull-right" type="button" value="Test API" />
+            <input id="btnUserInfo" class="btn btn-success btn-md btn-md pull-right" type="button" value="User Info" style="margin-right:5px" />
         </div>
-        <div id="divData" class="well hidden">
+        <div id="divData" class="well hidden"> 
             <table class="table table-bordered" id="tblData">
                 <thead>
                     <tr class="success">
@@ -23,6 +23,19 @@
                     </tr>
                 </thead>
                 <tbody id="tblBody"></tbody>
+            </table>
+        </div>
+        <div id="divUserData" class="well hidden">
+            <table class="table table-bordered" id="tblUserData">
+                <thead>
+                    <tr class="success">
+                        <td>FirstName</td>
+                        <td>LastName</td>
+                        <td>Phone</td>
+                        <td>Email</td>
+                    </tr>
+                </thead>
+                <tbody id="tblUserBody"></tbody>
             </table>
         </div>
         <div class="modal fade" tabindex="-1" id="errorModal"
@@ -129,13 +142,21 @@
 
             $('#btnUserInfo').click(function () {
                 $.ajax({
-                    url: '/User/UserInfo',
-                    method: 'POST',
+                    url: '/UserInfo?id=1',
+                    method: 'GET',
                     headers: {
                         'Token': sessionStorage.getItem("accessToken")
                     },
                     success: function (data) {
-                        alert(data);
+                        $('#divUserData').removeClass('hidden');
+                        $('#tblUserBody').empty();
+                        var row = $('<tr><td>'
+                              + data.FirstName + '</td><td>'
+                              + data.LastName + '</td><td>'
+                              + data.Phone + '</td><td>'
+                              + data.Email + '</td></tr>'
+                            );
+                        $('#tblUserData').append(row);
                     },
                     error: function (jQXHR) {
                         // If status code is 401, access token expired, so
@@ -150,10 +171,30 @@
                     }
                 });
             });
-
             $('#btnLogoff').click(function () {
-                sessionStorage.removeItem('accessToken');
-                window.location.href = "Login.html";
+                $.ajax({
+                    url: '/Logout',
+                    method: 'POST',
+                    headers: {
+                        'Token': sessionStorage.getItem("accessToken")
+                    },
+                    success: function (data) {
+                        sessionStorage.removeItem('accessToken');
+                        window.location.href = "Login.html";
+                    },
+                    error: function (jQXHR) {
+                        // If status code is 401, access token expired, so
+                        // redirect the user to the login page
+                        if (jQXHR.status == "401") {
+                            $('#errorModal').modal('show');
+                        }
+                        else {
+                            $('#divErrorText').text(jqXHR.responseText);
+                            $('#divError').show('fade');
+                        }
+                    }
+                });
+
             });
             $('#btnApi').click(function () {
                 window.location.href = "/Home";

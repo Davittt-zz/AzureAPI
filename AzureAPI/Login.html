@@ -66,15 +66,12 @@
                     headers: {
                         'Authorization': 'Basic ' + btoa(username + ':' + password)
                     },
-
                     success: function (response,request, xhr) {
                         sessionStorage.setItem("accessToken", xhr.getResponseHeader("Token"));
                         window.location.href = "/Elements.html";
                     },
-                    // Display errors if any in the Bootstrap alert <div>
                     error: function (jqXHR) {
-                        //  $('#divErrorText').text(jqXHR.responseText);
-                        $('#divErrorText').text("Login error, plesae try again");
+                        $('#divErrorText').text("Login error, please try again");
                         $('#divError').show('fade');
                     }
                 });

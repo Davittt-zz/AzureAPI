@@ -51,13 +51,8 @@ namespace AzureAPI.Controllers
 		/// <param name="id"></param>
 		/// <returns></returns>
 		[Route("UserInfo")]
-		public HttpResponseMessage GetUserInfo()
+		public HttpResponseMessage GetUserInfo(int id)
 		{
-			var basicAuthenticationIdentity = Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
-		//	if (basicAuthenticationIdentity != null)
-
-				var id = basicAuthenticationIdentity.UserId;
-
 			if (id > 0)
 			{
 				var user = _userServices.GetUserById(id);
