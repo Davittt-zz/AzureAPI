@@ -12,7 +12,6 @@ using System.Web.Http;
 
 namespace AzureAPI.Controllers
 {
-	[ApiAuthenticationFilter]
 	public class AuthenticateController : ApiController
 	{
 		#region Private variable.
@@ -51,6 +50,7 @@ namespace AzureAPI.Controllers
 		/// </summary>
 		/// <returns></returns>
 		[Route("Login")]
+		[ApiAuthenticationFilter]
 		public HttpResponseMessage Login()
 		{
 			if (System.Threading.Thread.CurrentPrincipal != null && System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
@@ -71,7 +71,8 @@ namespace AzureAPI.Controllers
 		/// <returns></returns>
 		[Route("Logout")]
 		[ApiAuthenticationFilter(false)]
-		public HttpResponseMessage Logout(int UserId)
+		[HttpPost]
+		public HttpResponseMessage Logout()
 		{
 			var Token = "Token";
 
