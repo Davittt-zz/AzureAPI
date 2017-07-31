@@ -21,6 +21,8 @@ using BusinessEntities.Account;
 using BusinessServices.Base;
 using System.Net;
 using AzureAPI.ErrorHelper;
+using System.Threading;
+using AzureAPI.Filters;
 
 namespace AzureAPI.Controllers
 {
@@ -44,12 +46,18 @@ namespace AzureAPI.Controllers
 
 		// GET api/User/UserInfo
 		/// <summary>
-		/// Get User information
+		/// Get User information. Add Header with Token "authToken"
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public HttpResponseMessage GetUserInfo(int id)
+		[Route("UserInfo")]
+		public HttpResponseMessage GetUserInfo()
 		{
+			var basicAuthenticationIdentity = Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
+		//	if (basicAuthenticationIdentity != null)
+
+				var id = basicAuthenticationIdentity.UserId;
+
 			if (id > 0)
 			{
 				var user = _userServices.GetUserById(id);

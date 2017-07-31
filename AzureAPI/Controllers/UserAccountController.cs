@@ -7,10 +7,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AzureAPI.Models;
 using System.Linq;
+using AzureAPI.ActionFilters;
 
 namespace AzureAPI.Controllers
 {
-	[Authorize]
+	//[Authorize]
+	[AuthorizationRequired]
 	public class UserAccountController : Controller
 	{
 		private ApplicationSignInManager _signInManager;
@@ -390,7 +392,17 @@ namespace AzureAPI.Controllers
 		public ActionResult LogOff()
 		{
 			AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+			//  Remove cookie
+			//  Remove Token
+			//var Token = "Token";
+
+			//if (Request.Cookies.Contains(Token))
+			//{
+			//	var tokenValue = Request.Headers.GetValues(Token);
+			//	return KillAuthToken(Token);
 			return RedirectToAction("Index", "Home");
+			//}
+			//throw new ApiException() { ErrorCode = (int)HttpStatusCode.BadRequest, ErrorDescription = "Bad Request..." };
 		}
 
 		//
