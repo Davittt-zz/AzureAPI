@@ -49,11 +49,11 @@ namespace AzureAPI.Controllers
 					var elementEntities = elements as List<ElementEntity> ?? elements.ToList();
 					if (elementEntities.Any())
 						return Request.CreateResponse(HttpStatusCode.OK, elementEntities);
-
 				}
-				throw new ApiDataException(1001, "No product found", HttpStatusCode.NotFound);
+				return Request.CreateResponse(HttpStatusCode.OK, "");
+				//throw new ApiDataException(1001, "No product found", HttpStatusCode.NotFound);
 			}
-			catch
+			catch 
 			{
 				throw new ApiException() { ErrorCode = (int)HttpStatusCode.BadRequest, ErrorDescription = "Bad Request..." };
 			}
