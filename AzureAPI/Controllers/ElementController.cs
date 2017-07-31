@@ -36,7 +36,7 @@ namespace AzureAPI.Controllers
 
 		// GET api/element
 		/// <summary>
-		/// Get the fullList of elements
+		/// Get the fullList of elements. Add Header with Token "authToken". you can find it in your browser (Chrome->PressF12->Application Tab->)
 		/// </summary>
 		/// <returns>List of Elements</returns>
 		public HttpResponseMessage Get()
@@ -61,7 +61,7 @@ namespace AzureAPI.Controllers
 
 		// GET api/element/5
 		/// <summary>
-		/// Get a Prticular element
+		/// Get a Particular element. Add Header with Token "authToken"
 		/// </summary>
 		/// <param name="id">Element Id</param>
 		/// <returns>Element</returns>
@@ -81,46 +81,83 @@ namespace AzureAPI.Controllers
 
 		// POST api/element
 		/// <summary>
-		/// Creates a new element
+		/// Creates a new element. Add Header with Token "authToken"
 		/// </summary>
 		/// <param name="elementEntity">Parameters set</param>
 		/// <returns>Id of the element</returns>
-		public int Post([FromBody] ElementEntity elementEntity)
+		public HttpResponseMessage Post([FromBody] ElementEntity elementEntity)
 		{
-			if (elementEntity != null)
+			try
 			{
-				return _elementServices.CreateElement(elementEntity);
+				if (elementEntity != null)
+				{
+					if (ModelState.IsValid)
+					{
+						return Request.CreateResponse(HttpStatusCode.OK, _elementServices.CreateElement(elementEntity));
+					}
+					else
+					{
+						throw new ApiBusinessException(2003, "Bad Request. Invalid object", HttpStatusCode.BadRequest);
+					}
+				}
+				throw new ApiBusinessException(2002, "Bad Request. Null element", HttpStatusCode.BadRequest);
 			}
-			throw new ApiBusinessException(2002, "Bad input.", HttpStatusCode.BadRequest);
+			catch
+			{
+				throw new ApiDataException(3001, "Internal error", HttpStatusCode.InternalServerError);
+			}
 		}
 
 		// PUT api/element/5
 		/// <summary>
-		/// Update an element
+		/// Update an element. Add Header with Token "authToken"
 		/// </summary>
 		/// <param name="id">Element Id</param>
 		/// <param name="elementEntity">SParameters set</param>
 		/// <returns></returns>
-		public bool Put(int id, [FromBody]ElementEntity elementEntity)
+		public HttpResponseMessage Put(int id, [FromBody]ElementEntity elementEntity)
 		{
-			if (id > 0)
+			try
 			{
-				return _elementServices.UpdateElement(id, elementEntity);
+				if (elementEntity != null)
+				{
+					if (ModelState.IsValid)
+					{
+						if (id > 0)
+						{
+							return Request.CreateResponse(HttpStatusCode.OK, _elementServices.UpdateElement(id, elementEntity));
+						}
+						else {
+							throw new ApiBusinessException(2004, "Object not updated. There is no Element with Id:" + id, HttpStatusCode.NotModified);
+						}
+					}
+					else
+					{
+						throw new ApiBusinessException(2003, "Bad Request. Invalid object", HttpStatusCode.BadRequest);
+					}
+				}
+				throw new ApiBusinessException(2002, "Bad Request. Null element", HttpStatusCode.BadRequest);
 			}
-			return false;
+			catch
+			{
+				throw new ApiDataException(3001, "Internal error", HttpStatusCode.InternalServerError);
+			}
 		}
-
 		// DELETE api/element/5
 		/// <summary>
-		/// Deletes and element
+		/// Deletes and element. Add Header with Token "authToken"
 		/// </summary>
 		/// <param name="id">Element Id</param>
 		/// <returns></returns>
-		public bool Delete(int id)
+		public HttpResponseMessage Delete(int id)
 		{
 			if (id > 0)
-				return _elementServices.DeleteElement(id);
-			return false;
+			{
+				return Request.CreateResponse(HttpStatusCode.OK, _elementServices.DeleteElement(id));
+			}
+			else {
+				throw new ApiBusinessException(2004, "Object not updated. There is no Element with Id:" + id, HttpStatusCode.NotModified);
+			}
 		}
 	}
 }

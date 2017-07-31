@@ -45,7 +45,7 @@ namespace AzureAPI.Controllers
 
 		// PUT api/values/5
 		/// <summary>
-		/// 
+		/// Edit Value
 		/// </summary>
 		/// <param name="id">Value Id</param>
 		/// <param name="value">Parameters Set</param>
@@ -54,7 +54,7 @@ namespace AzureAPI.Controllers
 		}
 
 		/// <summary>
-		/// Deletes and element
+		/// Deletes Value
 		/// </summary>
 		/// <param name="id">Value Id</param>
 		public void Delete(int id)
