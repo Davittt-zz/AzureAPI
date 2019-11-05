@@ -7,8 +7,8 @@
     <ProjectGuid>{641F25FA-2763-4F2C-A77F-63D3DFD46827}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Resolver</RootNamespace>
-    <AssemblyName>Resolver</AssemblyName>
+    <RootNamespace>HAA.Resolver</RootNamespace>
+    <AssemblyName>HAA.Resolver</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

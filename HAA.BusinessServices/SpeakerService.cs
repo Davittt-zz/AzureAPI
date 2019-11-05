@@ -4,6 +4,7 @@ using HAA.BusinessServices.Base;
 using HAA.DataModel;
 using HAA.DataModel.UnitOfWork;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HAA.BusinessServices
 {
@@ -21,7 +22,7 @@ namespace HAA.BusinessServices
 
         public List<SpeakerConfigEntity> GetByProjectId(int projectId)
         {
-            var speakerConfigs = _unitOfWork.SpeakerConfigRepository.GetByProjectId(projectId);
+            var speakerConfigs = _unitOfWork.SpeakerConfigRepository.GetManyQueryable(x => x.ProjectId == projectId).ToList();
             if (speakerConfigs != null)
             {
                 var config = new MapperConfiguration(cfg =>

@@ -15,7 +15,7 @@ namespace HAA.DataModel.UnitOfWork
 		private GenericRepository<User> _userRepository;
 		private GenericRepository<UserActivity> _userActivityRepository;
 		private GenericRepository<Element> _elementRepository;
-        private SpeakerRepository _speakerConfigRepository;
+        private GenericRepository<SpeakerConfig> _speakerConfigRepository;
         private GenericRepository<Token> _tokenRepository;
 
 		public UnitOfWork()
@@ -64,12 +64,12 @@ namespace HAA.DataModel.UnitOfWork
 			}
 		}
 
-        public SpeakerRepository SpeakerConfigRepository
+        public GenericRepository<SpeakerConfig> SpeakerConfigRepository
         {
             get
             {
                 if (this._speakerConfigRepository == null)
-                    this._speakerConfigRepository = new SpeakerRepository(_context);
+                    this._speakerConfigRepository = new GenericRepository<SpeakerConfig>(_context);
                 return _speakerConfigRepository;
             }
         }

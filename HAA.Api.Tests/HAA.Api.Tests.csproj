@@ -9,8 +9,8 @@
     <ProjectGuid>{858DB9C0-3B8C-460B-9914-3A846F488293}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AzureAPI.Tests</RootNamespace>
-    <AssemblyName>AzureAPI.Tests</AssemblyName>
+    <RootNamespace>HAA.Api.Tests</RootNamespace>
+    <AssemblyName>HAA.Api.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

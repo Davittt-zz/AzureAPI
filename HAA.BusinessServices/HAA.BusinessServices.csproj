@@ -7,8 +7,8 @@
     <ProjectGuid>{33076E3B-0222-42ED-ACDE-06EFDEBC7D56}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusinessServices</RootNamespace>
-    <AssemblyName>BusinessServices</AssemblyName>
+    <RootNamespace>HAA.BusinessServices</RootNamespace>
+    <AssemblyName>HAA.BusinessServices</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

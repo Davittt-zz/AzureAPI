@@ -39,6 +39,7 @@ namespace HAA.Api
 			//Component initialization via MEF
 			ComponentLoader.LoadContainer(container, ".\\bin", "HAA.Api.dll");
 			ComponentLoader.LoadContainer(container, ".\\bin", "HAA.BusinessServices.dll");
-		}
+            ComponentLoader.LoadContainer(container, ".\\bin", "HAA.DataModel.dll");
+        }
 	}
 }

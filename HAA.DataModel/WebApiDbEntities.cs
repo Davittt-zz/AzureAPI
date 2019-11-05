@@ -24,6 +24,7 @@ namespace HAA.DataModel
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<SpeakerConfig>()
+                .HasKey(y => y.Index)
                 .HasRequired(x => x.Project)
                 .WithMany()
                 .HasForeignKey(y => y.ProjectId);

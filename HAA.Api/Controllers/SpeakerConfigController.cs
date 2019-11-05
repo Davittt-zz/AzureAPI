@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Http;
 using HAA.BusinessServices.Base;
 using HAA.BusinessEntities;
+using System.Web.Routing;
 
 namespace HAA.Api.Controllers
 {
@@ -22,13 +23,13 @@ namespace HAA.Api.Controllers
         {
             _speakerService = speakerService;
         }
-
+        
         /// <summary>
         /// Obtains the speaker settings given a project id.
         /// </summary>
         /// <param name="projectId">The Project Id</param>
         /// <returns>A SpeakerConfig model</returns>
-        [Route("speakerConfig/{projectId}")]
+        [Route("api/speakerConfig/{projectId}")]
         public List<SpeakerConfigEntity> GetSpeakerConfigs(int projectId)
         {
             return _speakerService.GetByProjectId(projectId);

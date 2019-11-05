@@ -1,17 +1,14 @@
-﻿using HAA.BusinessServices.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HAA.DataModel.UnitOfWork;
-using System.Configuration;
-using HAA.BusinessEntities;
+﻿using HAA.BusinessEntities;
+using HAA.BusinessServices.Base;
 using HAA.DataModel;
+using HAA.DataModel.UnitOfWork;
+using System;
+using System.Configuration;
+using System.Linq;
 
 namespace HAA.BusinessServices
 {
-	public class TokenServices : ITokenServices
+    public class TokenServices : ITokenServices
 	{
 		#region Private member variables.
 		private readonly UnitOfWork _unitOfWork;
@@ -21,7 +18,7 @@ namespace HAA.BusinessServices
 		/// <summary>
 		/// Public constructor.
 		/// </summary>
-		public TokenServices(HAA.DataModel.UnitOfWork.UnitOfWork unitOfWork)
+		public TokenServices(UnitOfWork unitOfWork)
 		{
 			_unitOfWork = unitOfWork;
 		}

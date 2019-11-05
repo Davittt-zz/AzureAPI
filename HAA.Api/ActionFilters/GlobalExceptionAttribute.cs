@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http.Filters;
-using System.Web.Http;
-using System.Web.Http.Tracing;
+﻿using HAA.Api.ErrorHelper;
 using HAA.Api.Helpers;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Net.Http;
 using System.Net;
-using HAA.Api.ErrorHelper;
-using HAA.Api.Helpers;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Filters;
+using System.Web.Http.Tracing;
 
 namespace HAA.Api.ActionFilters
 {
-	/// <summary>
-	/// Action filter to handle for Global application errors.
-	/// </summary>
-	public class GlobalExceptionAttribute : ExceptionFilterAttribute
+    /// <summary>
+    /// Action filter to handle for Global application errors.
+    /// </summary>
+    public class GlobalExceptionAttribute : ExceptionFilterAttribute
 	{
 		public override void OnException(HttpActionExecutedContext context)
 		{

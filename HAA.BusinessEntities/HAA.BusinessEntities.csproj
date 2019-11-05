@@ -7,8 +7,8 @@
     <ProjectGuid>{FC195BF4-3B27-471A-9C66-8CFEF50DE2C0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusinessEntities</RootNamespace>
-    <AssemblyName>BusinessEntities</AssemblyName>
+    <RootNamespace>HAA.BusinessEntities</RootNamespace>
+    <AssemblyName>HAA.BusinessEntities</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
