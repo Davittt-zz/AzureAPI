@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AzureAPI</name>
+    </assembly>
+    <members>
+        <member name="T:HAA.Api.ActionFilters.GlobalExceptionAttribute">
+            <summary>
+            Action filter to handle for Global application errors.
+            </summary>
+        </member>
+        <member name="T:HAA.Api.Controllers.SpeakerConfigController">
+            <summary>
+            Controller for getting and saving speaker configuration per project
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Controllers.SpeakerConfigController.#ctor(HAA.BusinessServices.Base.ISpeakerService)">
+            <summary>
+            Constructor method
+            </summary>
+            <param name="speakerService"></param>
+        </member>
+        <member name="M:HAA.Api.Controllers.SpeakerConfigController.GetSpeakerConfigs(System.Int32)">
+            <summary>
+            Obtains the speaker settings given a project id.
+            </summary>
+            <param name="projectId">The Project Id</param>
+            <returns>A SpeakerConfig model</returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.UserController.#ctor(HAA.BusinessServices.Base.IUserServices)">
+            <summary>
+            Public constructor to initialize element service instance with DI
+            
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Controllers.UserController.GetUserInfo(System.Int32)">
+            <summary>
+            Get User information. Add Header with Token "authToken"
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.AuthenticateController.#ctor(HAA.BusinessServices.Base.ITokenServices)">
+            <summary>
+            Public constructor to initialize product service instance
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Controllers.AuthenticateController.TestToken">
+            <summary>
+            Test function will be a simple function with few variable and will return "Ok" output with the access token is valid. A test function will be developed to accept the access token and input and return valid output. Test function will be a simple function with few variable and will return "Ok" output with the access token is valid. There will not be any calculation inside the function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.AuthenticateController.Login">
+            <summary>
+            Authenticates user and returns token with expiry. Set authenticatoin header ( Basic  encode64(user:password)). 
+            You can convert your user:password to base64 at https://www.base64encode.org/
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.AuthenticateController.Logout">
+            <summary>
+            Method for Logging out
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.AuthenticateController.GetAuthToken(System.Int32)">
+            <summary>
+            Returns auth token for the validated user.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.AuthenticateController.KillAuthToken(System.String)">
+            <summary>
+            Returns auth token for the validated user.
+            </summary>
+            <param name="Token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HAA.Api.Controllers.ElementController">
+            <summary>
+            Element controller class. you can add different classes like this. Token based security.
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Controllers.ElementController.#ctor(HAA.BusinessServices.Base.IElementServices)">
+            <summary>
+            Public constructor to initialize element service instance with DI
+            
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Controllers.ElementController.Get">
+            <summary>
+            Get the fullList of elements. Add Header with Token "authToken". you can find it in your browser (Chrome->PressF12->Application Tab->)
+            </summary>
+            <returns>List of Elements</returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.ElementController.Get(System.Int32)">
+            <summary>
+            Get a Particular element. Add Header with Token "authToken"
+            </summary>
+            <param name="id">Element Id</param>
+            <returns>Element</returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.ElementController.Post(HAA.BusinessEntities.ElementEntity)">
+            <summary>
+            Creates a new element. Add Header with Token "authToken"
+            </summary>
+            <param name="elementEntity">Parameters set</param>
+            <returns>Id of the element</returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.ElementController.Put(System.Int32,HAA.BusinessEntities.ElementEntity)">
+            <summary>
+            Update an element. Add Header with Token "authToken"
+            </summary>
+            <param name="id">Element Id</param>
+            <param name="elementEntity">SParameters set</param>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.ElementController.Delete(System.Int32)">
+            <summary>
+            Deletes and element. Add Header with Token "authToken"
+            </summary>
+            <param name="id">Element Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:HAA.Api.Controllers.HomeController">
+            <summary>
+            Init View
+            </summary>
+        </member>
+        <member name="T:HAA.Api.Controllers.ValuesController">
+            <summary>
+            Value class is a set of metods which are generated automatically. The class has no security mechanisms
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Controllers.ValuesController.Get">
+            <summary>
+            Get the fullList of Values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            Get a Prticular Value
+            </summary>
+            <param name="id">Value Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            Creates a new Value
+            </summary>
+            <param name="value">Parameters set</param>
+            <returns>Id of the element</returns>
+        </member>
+        <member name="M:HAA.Api.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            Edit Value
+            </summary>
+            <param name="id">Value Id</param>
+            <param name="value">Parameters Set</param>
+        </member>
+        <member name="M:HAA.Api.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            Deletes Value
+            </summary>
+            <param name="id">Value Id</param>
+        </member>
+        <member name="T:HAA.Api.ErrorHelper.ApiDataException">
+            <summary>
+            Api Data Exception
+            </summary>
+        </member>
+        <member name="M:HAA.Api.ErrorHelper.ApiDataException.#ctor(System.Int32,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Public constructor for Api Data Exception
+            </summary>
+            <param name="errorCode"></param>
+            <param name="errorDescription"></param>
+            <param name="httpStatus"></param>
+        </member>
+        <member name="T:HAA.Api.ErrorHelper.ApiException">
+            <summary>
+            Api Exception
+            </summary>
+        </member>
+        <member name="T:HAA.Api.ErrorHelper.ApiBusinessException">
+            <summary>
+            Api Business Exception
+            </summary>
+        </member>
+        <member name="M:HAA.Api.ErrorHelper.ApiBusinessException.#ctor(System.Int32,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Public constructor for Api Business Exception
+            </summary>
+            <param name="errorCode"></param>
+            <param name="errorDescription"></param>
+            <param name="httpStatus"></param>
+        </member>
+        <member name="T:HAA.Api.ErrorHelper.IApiExceptions">
+            <summary>
+            IApiExceptions Interface
+            </summary>
+        </member>
+        <member name="P:HAA.Api.ErrorHelper.IApiExceptions.ErrorCode">
+            <summary>
+            ErrorCode
+            </summary>
+        </member>
+        <member name="P:HAA.Api.ErrorHelper.IApiExceptions.ErrorDescription">
+            <summary>
+            ErrorDescription
+            </summary>
+        </member>
+        <member name="P:HAA.Api.ErrorHelper.IApiExceptions.HttpStatus">
+            <summary>
+            HttpStatus
+            </summary>
+        </member>
+        <member name="P:HAA.Api.ErrorHelper.IApiExceptions.ReasonPhrase">
+            <summary>
+            ReasonPhrase
+            </summary>
+        </member>
+        <member name="T:HAA.Api.Filters.ApiAuthenticationFilter">
+            <summary>
+            Custom Authentication Filter Extending basic Authentication
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Filters.ApiAuthenticationFilter.#ctor">
+            <summary>
+            Default Authentication Constructor
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Filters.ApiAuthenticationFilter.#ctor(System.Boolean)">
+            <summary>
+            AuthenticationFilter constructor with isActive parameter
+            </summary>
+            <param name="isActive"></param>
+        </member>
+        <member name="M:HAA.Api.Filters.ApiAuthenticationFilter.OnAuthorizeUser(System.String,System.String,System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Protected overriden method for authorizing user
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="actionContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HAA.Api.Filters.BasicAuthenticationIdentity">
+            <summary>
+            Basic Authentication identity
+            </summary>
+        </member>
+        <member name="P:HAA.Api.Filters.BasicAuthenticationIdentity.Password">
+            <summary>
+            Get/Set for password
+            </summary>
+        </member>
+        <member name="P:HAA.Api.Filters.BasicAuthenticationIdentity.UserName">
+            <summary>
+            Get/Set for UserName
+            </summary>
+        </member>
+        <member name="P:HAA.Api.Filters.BasicAuthenticationIdentity.UserId">
+            <summary>
+            Get/Set for UserId
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Filters.BasicAuthenticationIdentity.#ctor(System.String,System.String)">
+            <summary>
+            Basic Authentication Identity Constructor
+            </summary>
+            <param name="userName"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:HAA.Api.Filters.GenericAuthenticationFilter.#ctor">
+            <summary>
+            Public default Constructor
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Filters.GenericAuthenticationFilter.#ctor(System.Boolean)">
+            <summary>
+            parameter isActive explicitly enables/disables this filetr.
+            </summary>
+            <param name="isActive"></param>
+        </member>
+        <member name="M:HAA.Api.Filters.GenericAuthenticationFilter.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Checks basic authentication request
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:HAA.Api.Filters.GenericAuthenticationFilter.OnAuthorizeUser(System.String,System.String,System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Virtual method.Can be overriden with the custom Authorization.
+            </summary>
+            <param name="user"></param>
+            <param name="pass"></param>
+            <param name="filterContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HAA.Api.Filters.GenericAuthenticationFilter.FetchAuthHeader(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Checks for autrhorization header in the request and parses it, creates user credentials and returns as BasicAuthenticationIdentity
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:HAA.Api.Filters.GenericAuthenticationFilter.ChallengeAuthRequest(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Send the Authentication Challenge request
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:HAA.Api.Helpers.JSONHelper.ToJSON(System.Object)">
+            <summary>
+            Extened method of object class
+            Converts an object to a json string.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HAA.Api.Helpers.NLogger">
+            <summary>
+            Public class to log Error/info messages to the access log file
+            </summary>
+        </member>
+        <member name="P:HAA.Api.Helpers.NLogger.Logger">
+            <summary>
+            Get property for Logger
+            </summary>
+        </member>
+        <member name="M:HAA.Api.Helpers.NLogger.Trace(System.Net.Http.HttpRequestMessage,System.String,System.Web.Http.Tracing.TraceLevel,System.Action{System.Web.Http.Tracing.TraceRecord})">
+            <summary>
+            Implementation of TraceWriter to trace the logs.
+            </summary>
+            <param name="request"></param>
+            <param name="category"></param>
+            <param name="level"></param>
+            <param name="traceAction"></param>
+        </member>
+        <member name="M:HAA.Api.Helpers.NLogger.Log(System.Web.Http.Tracing.TraceRecord)">
+            <summary>
+            Logs info/Error to Log file
+            </summary>
+            <param name="record"></param>
+        </member>
+        <member name="T:HAA.Api.Helpers.ServiceStatus">
+            <summary>
+            Public class to return input status
+            </summary>
+        </member>
+        <member name="P:HAA.Api.Helpers.ServiceStatus.StatusCode">
+            <summary>
+            Get/Set property for accessing Status Code
+            </summary>
+        </member>
+        <member name="P:HAA.Api.Helpers.ServiceStatus.StatusMessage">
+            <summary>
+            Get/Set property for accessing Status Message
+            </summary>
+        </member>
+        <member name="P:HAA.Api.Helpers.ServiceStatus.ReasonPhrase">
+            <summary>
+            Get/Set property for accessing Status Message
+            </summary>
+        </member>
+    </members>
+</doc>
