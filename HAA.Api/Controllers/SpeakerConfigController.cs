@@ -4,6 +4,7 @@ using System.Web.Http;
 using HAA.BusinessServices.Base;
 using HAA.BusinessEntities;
 using System.Web.Routing;
+using HAA.BusinessEntities.Input;
 
 namespace HAA.Api.Controllers
 {
@@ -11,6 +12,7 @@ namespace HAA.Api.Controllers
     /// Controller for getting and saving speaker configuration per project
     /// </summary>
     //[AuthorizationRequired]
+    [RoutePrefix("api/speakerConfig")]
     public class SpeakerConfigController : ApiController
     {
         private readonly ISpeakerService _speakerService;
@@ -29,10 +31,17 @@ namespace HAA.Api.Controllers
         /// </summary>
         /// <param name="projNumber">The Project Id</param>
         /// <returns>A SpeakerConfig model</returns>
-        [Route("api/speakerConfig/{projNumber}")]
+        [Route("{projNumber}")]
         public List<SpeakerConfigEntity> GetSpeakerConfigs(string projNumber)
         {
             return _speakerService.GetByProjectId(projNumber);
+        }
+
+        [Route("crossProduct")]
+        [HttpPost]
+        public object CrossProduct(CrossProductModel model)
+        {
+            return _speakerService.CrossProduct(model);
         }
     }
 }

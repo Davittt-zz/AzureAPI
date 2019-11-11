@@ -71,6 +71,10 @@
       <Project>{641F25FA-2763-4F2C-A77F-63D3DFD46827}</Project>
       <Name>HAA.Resolver</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HAA.SpeakerConfig\HAA.SpeakerConfig.vbproj">
+      <Project>{f74c15d7-0864-4500-bd19-2cce6de7cf05}</Project>
+      <Name>HAA.SpeakerConfig</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

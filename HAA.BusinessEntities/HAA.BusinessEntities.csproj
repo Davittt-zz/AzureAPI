@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Account\UserInfoViewModel.cs" />
     <Compile Include="ElementEntity.cs" />
+    <Compile Include="Input\CrossProductModel.cs" />
     <Compile Include="ProjectEntity.cs" />
     <Compile Include="SpeakerConfigEntity.cs" />
     <Compile Include="TokenEntity.cs" />
