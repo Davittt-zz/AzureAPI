@@ -1,15 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace HAA.DataModel
+﻿namespace HAA.BusinessEntities
 {
-    [Table("Project")]
-    public class Project
+    public class ProjectEntity
     {
-        [Key]
         public int Index { get; set; }
 
-        public string ProjectNumber { get; set; }
+        public int ProjectNumber { get; set; }
 
         public string ProjName { get; set; }
 

@@ -20,11 +20,11 @@
             </summary>
             <param name="speakerService"></param>
         </member>
-        <member name="M:HAA.Api.Controllers.SpeakerConfigController.GetSpeakerConfigs(System.Int32)">
+        <member name="M:HAA.Api.Controllers.SpeakerConfigController.GetSpeakerConfigs(System.String)">
             <summary>
             Obtains the speaker settings given a project id.
             </summary>
-            <param name="projectId">The Project Id</param>
+            <param name="projNumber">The Project Id</param>
             <returns>A SpeakerConfig model</returns>
         </member>
         <member name="M:HAA.Api.Controllers.UserController.#ctor(HAA.BusinessServices.Base.IUserServices)">

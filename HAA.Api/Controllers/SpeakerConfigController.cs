@@ -10,7 +10,7 @@ namespace HAA.Api.Controllers
     /// <summary>
     /// Controller for getting and saving speaker configuration per project
     /// </summary>
-    [AuthorizationRequired]
+    //[AuthorizationRequired]
     public class SpeakerConfigController : ApiController
     {
         private readonly ISpeakerService _speakerService;
@@ -23,16 +23,16 @@ namespace HAA.Api.Controllers
         {
             _speakerService = speakerService;
         }
-        
+
         /// <summary>
         /// Obtains the speaker settings given a project id.
         /// </summary>
-        /// <param name="projectId">The Project Id</param>
+        /// <param name="projNumber">The Project Id</param>
         /// <returns>A SpeakerConfig model</returns>
-        [Route("api/speakerConfig/{projectId}")]
-        public List<SpeakerConfigEntity> GetSpeakerConfigs(int projectId)
+        [Route("api/speakerConfig/{projNumber}")]
+        public List<SpeakerConfigEntity> GetSpeakerConfigs(string projNumber)
         {
-            return _speakerService.GetByProjectId(projectId);
+            return _speakerService.GetByProjectId(projNumber);
         }
     }
 }

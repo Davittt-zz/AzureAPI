@@ -5,6 +5,6 @@ namespace HAA.BusinessServices.Base
 {
     public interface ISpeakerService
     {
-        List<SpeakerConfigEntity> GetByProjectId(int projectId);
+        List<SpeakerConfigEntity> GetByProjectId(string projNumber);
     }
 }

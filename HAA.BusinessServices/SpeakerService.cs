@@ -20,18 +20,19 @@ namespace HAA.BusinessServices
             _unitOfWork = unitOfWork;
         }
 
-        public List<SpeakerConfigEntity> GetByProjectId(int projectId)
+        public List<SpeakerConfigEntity> GetByProjectId(string projNumber)
         {
-            var speakerConfigs = _unitOfWork.SpeakerConfigRepository.GetManyQueryable(x => x.ProjectId == projectId).ToList();
+            var speakerConfigs = _unitOfWork.SpeakerConfigRepository.GetWithInclude(x => x.ProjectNumber == projNumber, "Project").ToList();
             if (speakerConfigs != null)
             {
                 var config = new MapperConfiguration(cfg =>
                 {
                     cfg.CreateMap<SpeakerConfig, SpeakerConfigEntity>();
+                    cfg.CreateMap<Project, ProjectEntity>();
                 });
 
                 IMapper mapper = config.CreateMapper();
-                var speakerModel = mapper.Map<List<SpeakerConfig>, List<SpeakerConfigEntity>>(speakerConfigs);
+                var speakerModel = mapper.Map<List<SpeakerConfigEntity>>(speakerConfigs);
                 return speakerModel;
             }
 

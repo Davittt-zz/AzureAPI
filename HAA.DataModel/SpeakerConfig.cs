@@ -1,22 +1,27 @@
-﻿namespace HAA.DataModel
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HAA.DataModel
 {
+    [Table("ProjectSpeakers")]
     public class SpeakerConfig
     {
+        [Key]
         public int Index { get; set; }
-        public int? DrawRefIndex { get; set; }
+        public string DrawRefIndex { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public string Version { get; set; }
         public string RetailPrice { get; set; }
-        public double? Height { get; set; }
-        public double? Width { get; set; }
-        public double? Depth { get; set; }
-        public double? AcOffsetX { get; set; }
-        public double? AcOffsetY { get; set; }
-        public double? AcOffsetZ { get; set; }
-        public double? WooferOffsetX { get; set; }
-        public double? WooferOffsetY { get; set; }
-        public double? WooferOffsetZ { get; set; }
+        public decimal? Height { get; set; }
+        public decimal? Width { get; set; }
+        public decimal? Depth { get; set; }
+        public decimal? AcOffsetX { get; set; }
+        public decimal? AcOffsetY { get; set; }
+        public decimal? AcOffsetZ { get; set; }
+        public decimal? WooferOffsetX { get; set; }
+        public decimal? WooferOffsetY { get; set; }
+        public decimal? WooferOffsetZ { get; set; }
         public string TopImage { get; set; }
         public string SideImage { get; set; }
         public string FrontImage { get; set; }
@@ -24,24 +29,27 @@
         public string FreqResponse { get; set; }
         public string FreqResponsePlot { get; set; }
         public string OffFreqResponsePlot { get; set; }
-        public double? HorCoverage { get; set; }
-        public double? VerCoverage { get; set; }
-        public double? NominalImpedance { get; set; }
-        public double? Sensitivity { get; set; }
-        public double? MaxSoundLevel { get; set; }
-        public double? Crossover { get; set; }
+        public string HorCoverage { get; set; }
+        public string VerCoverage { get; set; }
+        public string NominalImpedance { get; set; }
+        public string Sensitivity { get; set; }
+        public string MaxSoundLevel { get; set; }
+        public string Crossover { get; set; }
         public string Mounting { get; set; }
         public string Type { get; set; }
         public string Slope { get; set; }
-        public double? X { get; set; }
-        public double? Y { get; set; }
-        public double? Z { get; set; }
-        public int? Status { get; set; }
+        public decimal? X { get; set; }
+        public decimal? Y { get; set; }
+        public decimal? Z { get; set; }
+        public string Status { get; set; }
         public string Designation { get; set; }
         public string Wall { get; set; }
         public string Family { get; set; }
+        
         public Project Project { get; set; }
 
         public int ProjectId { get; set; }
+
+        public string ProjectNumber { get; set; }
     }
 }

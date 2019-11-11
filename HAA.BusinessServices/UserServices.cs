@@ -3,18 +3,13 @@ using HAA.BusinessEntities;
 using HAA.BusinessServices.Base;
 using HAA.DataModel;
 using HAA.DataModel.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HAA.BusinessServices
 {
-	/// <summary>
-	/// Offers services for user specific operations
-	/// </summary>
-	public class UserServices : IUserServices
+    /// <summary>
+    /// Offers services for user specific operations
+    /// </summary>
+    public class UserServices : IUserServices
 	{
 		private readonly UnitOfWork _unitOfWork;
 
@@ -34,10 +29,10 @@ namespace HAA.BusinessServices
 		/// <returns></returns>
 		public int Authenticate(string userName, string password)
 		{
-			var user = _unitOfWork.UserRepository.Get(u => u.Username == userName && u.Password == password);
-			if (user != null && user.Id > 0)
+			var user = _unitOfWork.UserRepository.Get(u => u.UserID == userName && u.Password == password);
+			if (user != null)
 			{
-				return user.Id;
+				return user.Index;
 			}
 			return 0;
 		}

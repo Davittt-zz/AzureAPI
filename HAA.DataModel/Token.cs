@@ -1,10 +1,10 @@
-
 namespace HAA.DataModel
 {
-	using System;
-    using System.Collections.Generic;
+    using System;
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class Token
+    [Table("Token")]
+    public class Token
     {
         public int Id { get; set; }
         public int UserId { get; set; }
