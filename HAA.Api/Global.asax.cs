@@ -30,12 +30,8 @@ namespace HAA.Api
 			var jsonFormatter = formatters.JsonFormatter;
 			var settings = jsonFormatter.SerializerSettings;
 			settings.Formatting = Formatting.Indented;
-			// settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 			var appXmlType = formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
 			formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
-			
-			//Add CORS Handler
-			//	GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler());
 		}
 	}
 }

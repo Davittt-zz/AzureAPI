@@ -22,10 +22,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Help", "Index", "Help", new { area = "" }, null)</li>
-                    @*<li>@Html.ActionLink("User Info", "Details", "UserEntities", new { area = "" }, null)</li>*@
-
-                  </ul>
+                    <li><a href="/swagger" class="navbar-brand">Help</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -33,7 +31,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - ASP.NET WebAPI</p>
+            <p>&copy; @DateTime.Now.Year - HAA</p>
         </footer>
     </div>
 

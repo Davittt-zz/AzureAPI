@@ -42,7 +42,16 @@
   <ItemGroup>
     <Compile Include="Account\UserInfoViewModel.cs" />
     <Compile Include="ElementEntity.cs" />
+    <Compile Include="Input\CalcImagePointModel.cs" />
+    <Compile Include="Input\CalcMirrorPointsModel.cs" />
     <Compile Include="Input\CrossProductModel.cs" />
+    <Compile Include="Input\DetermineWallTypeModel.cs" />
+    <Compile Include="Input\GetDolbyArrayModel.cs" />
+    <Compile Include="Input\IntersectionModel.cs" />
+    <Compile Include="Input\PythagDistModel.cs" />
+    <Compile Include="Input\SpeakerAnglesModel.cs" />
+    <Compile Include="Input\TriangleModel.cs" />
+    <Compile Include="Input\UpdateSpkrConfigModel.cs" />
     <Compile Include="ProjectEntity.cs" />
     <Compile Include="SpeakerConfigEntity.cs" />
     <Compile Include="TokenEntity.cs" />

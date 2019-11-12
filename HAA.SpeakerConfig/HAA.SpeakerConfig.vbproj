@@ -64,7 +64,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SpeakerConfig.vb" />
+    <Compile Include="DataFunctions.vb" />
+    <Compile Include="dbServer.vb" />
     <Compile Include="Functions.vb" />
+    <Compile Include="Library.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
